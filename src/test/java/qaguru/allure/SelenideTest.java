@@ -28,18 +28,6 @@ public class SelenideTest {
         $(withText("Issues")).click();
         $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
     }
-     //тест с намеренной ошибкой
-    @Test
-    public void testSelenideNoIssue() {
-        //создание лога
-        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(false));
-
-        open(BASE_URL);
-        $(".header-search-input").click;
-        $(By.linkText("allure-frameworkallure2")).click();
-        $(withText("Issues")).click();
-        $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
-
-    }
+     
 
 }
